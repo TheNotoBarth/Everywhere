@@ -54,7 +54,6 @@ public static class Program
                 .AddTransient<BuiltInChatPlugin, WebBrowserPlugin>()
                 .AddTransient<BuiltInChatPlugin, FileSystemPlugin>()
                 .AddTransient<BuiltInChatPlugin, PowerShellPlugin>()
-                .AddTransient<BuiltInChatPlugin, WindowsSystemApiPlugin>()
                 .AddTransient<BuiltInChatPlugin, EverythingPlugin>()
 
                 #endregion

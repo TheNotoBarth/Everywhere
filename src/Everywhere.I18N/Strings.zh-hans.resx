@@ -692,12 +692,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>提供访问系统文件的能力, 如枚举、创建、删除、重命名、读取或写入文件等。</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>Windows 系统 API</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>提供一组精简的 Windows 控制能力，包括 Control Panel 快捷入口、系统设置的数值与开关调整、适配 computer-use 的鼠标键盘操作。</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>无效的操作。</value>
     </data>
@@ -1271,7 +1265,7 @@
         <value>修改文件内容</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>搜索: {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>网络搜索</value>
@@ -1286,7 +1280,7 @@
         <value>访问网页</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>前往: {0}</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
         <value>{0} 个链接</value>
@@ -1542,5 +1536,11 @@
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>取消编辑 (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>聊天</value>
+    </data>
+    <data name="NativeChatPlugin_Everything_SearchFiles_DetailMessage" xml:space="preserve">
+        <value>找到了 {0} 个项目</value>
     </data>
 </root>

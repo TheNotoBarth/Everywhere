@@ -44,7 +44,7 @@ public class EverythingPlugin : BuiltInChatPlugin
         {
             await _watchdogManager.RegisterProcessAsync(process.Id);
         }
-        
+
         var maxAttempts = 5;
         do
         {
@@ -57,8 +57,10 @@ public class EverythingPlugin : BuiltInChatPlugin
     [Description("Search files using Everything search engine.")]
     [DynamicResourceKey(LocaleKey.NativeChatPlugin_Everything_SearchFiles_Header)]
     private async Task<string> SearchFilesAsync(
+        [FromKernelServices] IChatPluginUserInterface userInterface,
         [Description("Standard search pattern in Everything search engine.")] string searchPattern,
-        [Description("Maximum number of results to return. Default is 50 and will be limited to 1000.")] int maxResults = 50,
+        [Description("Maximum number of results to return. Default is 50 and will be limited to 1000.")]
+        int maxResults = 50,
         CancellationToken cancellationToken = default)
     {
         if (maxResults <= 0)
@@ -76,6 +78,10 @@ public class EverythingPlugin : BuiltInChatPlugin
                         .SendSearch(searchPattern, default)
                         .Take(Math.Min(maxResults, 1000))
                         .Select(CreateFileRecord);
+                    userInterface.DisplaySink.AppendDynamicResourceKey(
+                        new FormattedDynamicResourceKey(
+                            LocaleKey.NativeChatPlugin_Everything_SearchFiles_DetailMessage,
+                            new DirectResourceKey(everything.Count.ToString())));
                     return new FileRecords(results, everything.Count).ToString();
                 },
                 cancellationToken)

@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Logging;
@@ -33,7 +34,9 @@ public sealed class GoogleKernelMixin : KernelMixinBase
         ChatCompletionService = new OptimizedGeminiChatCompletionService(service);
     }
 
-    private void ApplyCustomEndpoint(GoogleAIGeminiChatCompletionService service)
+    private void ApplyCustomEndpoint(
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.NonPublicFields)]
+        GoogleAIGeminiChatCompletionService service)
     {
         // We need to modify the endpoint by reflection because the GoogleAIGeminiChatCompletionService does not expose it.
 

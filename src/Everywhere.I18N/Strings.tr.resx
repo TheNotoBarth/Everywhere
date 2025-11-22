@@ -690,12 +690,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>Dosyalara erişim yeteneği sağlar; sayım, oluşturma, silme, yeniden adlandırma, okuma veya yazma gibi işlemleri içerir.</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>Windows Sistem API</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>Asistanlar için kompakt bir Windows kontrol yüzeyi sağlar; Kontrol Paneli kısayolları, sayısal ve mantıksal sistem ayarı güncellemeleri ve bilgisayar uyumlu fare ve klavye eylemleri içerir.</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>Geçersiz işlem.</value>
     </data>
@@ -1264,7 +1258,7 @@
         <value>Dosya İçeriğini Düzenle</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>{0} aranıyor</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>Web Arama</value>
@@ -1279,10 +1273,7 @@
         <value>Web Sayfasını Ziyaret Et</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>{0} ziyaret ediliyor</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} URL'ler</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>Aşağıdaki terminal betiği çalıştırılacak</value>
@@ -1535,5 +1526,8 @@ Seçim modlarını değiştirmek için kaydırma tekerleğini veya sayı tuşlar
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>Düzenlemeyi İptal Et (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>Sohbet</value>
     </data>
 </root>

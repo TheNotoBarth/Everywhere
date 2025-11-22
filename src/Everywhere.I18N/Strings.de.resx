@@ -691,12 +691,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>Bietet die Möglichkeit, auf Dateien zuzugreifen, z. B. Auflisten, Erstellen, Löschen, Umbenennen, Lesen oder Schreiben.</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>Windows-System-API</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>Bietet eine kompakte Windows-Steueroberfläche für Assistenten, einschließlich Verknüpfungen zum Systemsteuerung, Aktualisierungen von numerischen und booleschen Systemeinstellungen sowie computerkompatiblen Maus- und Tastaturaktionen.</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>Ungültiger Vorgang.</value>
     </data>
@@ -1266,7 +1260,7 @@ Platzhalter können im Prompt verwendet werden, eingeschlossen in {}, und werden
         <value>Dateiinhalt bearbeiten</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>Suche: {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>Websuche</value>
@@ -1281,10 +1275,7 @@ Platzhalter können im Prompt verwendet werden, eingeschlossen in {}, und werden
         <value>Webseite besuchen</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>Besuche {0}</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} URLs</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>Das folgende Terminalskript wird ausgeführt</value>
@@ -1537,5 +1528,8 @@ Scrollrad oder Zifferntasten zum Wechseln der Auswahlmodi</value>
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>Bearbeitung abbrechen (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>Chat</value>
     </data>
 </root>

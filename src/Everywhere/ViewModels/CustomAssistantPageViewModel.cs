@@ -71,10 +71,9 @@ public partial class CustomAssistantPageViewModel(IKernelMixinFactory kernelMixi
     {
         if (SelectedCustomAssistant is not { } customAssistant) return;
 
-        var jsonSerializerOptions = JsonSerializerOptions.Default;
-        var duplicatedAssistant = JsonSerializer.Deserialize<CustomAssistant>(
-            JsonSerializer.Serialize(customAssistant, jsonSerializerOptions),
-            jsonSerializerOptions).NotNull();
+        var duplicatedAssistant = JsonSerializer.Deserialize(
+            JsonSerializer.Serialize(customAssistant, CustomAssistant.JsonSerializerContext.Default.CustomAssistant),
+            CustomAssistant.JsonSerializerContext.Default.CustomAssistant).NotNull();
 
         duplicatedAssistant.Id = Guid.CreateVersion7();
         duplicatedAssistant.Name += " - " + LocaleKey.Common_Copy.I18N();

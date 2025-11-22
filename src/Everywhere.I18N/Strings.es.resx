@@ -692,12 +692,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>Proporciona la capacidad de acceder a archivos, como enumerar, crear, eliminar, renombrar, leer o escribir.</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>API del Sistema Windows</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>Proporciona una superficie de control compacta de Windows para asistentes, incluyendo accesos directos al Panel de Control, actualizaciones de configuraciones del sistema numéricas y booleanas, y acciones compatibles con el uso del ratón y teclado.</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>Operación inválida.</value>
     </data>
@@ -1270,7 +1264,7 @@ Se pueden usar marcadores de posición dentro del mensaje, encerrados en {}, y s
         <value>Editar Contenido del Archivo</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>Buscando: {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>Búsqueda Web</value>
@@ -1285,10 +1279,7 @@ Se pueden usar marcadores de posición dentro del mensaje, encerrados en {}, y s
         <value>Visitar Página Web</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>Visitando {0}</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} Urls</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>Se ejecutará el siguiente script de terminal</value>
@@ -1541,5 +1532,8 @@ Rueda de desplazamiento o teclas numéricas para cambiar modos de selección</va
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>Cancelar edición (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>Chat</value>
     </data>
 </root>

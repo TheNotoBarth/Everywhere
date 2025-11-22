@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Text.Json.Serialization;
 using ZLinq;
@@ -43,7 +44,13 @@ public class ObjectObserver(ObjectObserverChangedEventHandler handler) : IDispos
         Dispose();
     }
 
-    public ObjectObserver Observe(INotifyPropertyChanged target, string basePath = "")
+    public ObjectObserver Observe(
+        [DynamicallyAccessedMembers(
+            DynamicallyAccessedMemberTypes.PublicConstructors |
+            DynamicallyAccessedMemberTypes.PublicFields |
+            DynamicallyAccessedMemberTypes.PublicProperties)]
+        INotifyPropertyChanged target,
+        string basePath = "")
     {
         _observations.Add(new Observation(basePath, target, this));
         return this;

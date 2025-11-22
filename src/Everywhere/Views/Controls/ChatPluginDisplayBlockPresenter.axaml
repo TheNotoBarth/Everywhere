@@ -63,7 +63,8 @@
         <DataTemplate DataType="plugins:ChatPluginFileReferencesDisplayBlock">
           <StackPanel Spacing="4">
             <TextBlock
-              Classes="Muted" FontSize="12">
+              Classes="Muted"
+              FontSize="{DynamicResource FontSizeS}">
               <TextBlock.Text>
                 <I18N Key="{x:Static LocaleKey.ChatPluginDisplayBlockPresenter_FileReferences_TotalCountTextBlock_Text}">
                   <Binding Path="TotalReferenceCount"/>
@@ -83,7 +84,9 @@
                         <LucideIcon
                           Kind="{Binding IconAsync^}"
                           Size="14"/>
-                        <TextBlock Text="{Binding FullPath, Converter={x:Static vc:CommonConverters.FullPathToFileName}}"/>
+                        <TextBlock
+                          FontSize="{DynamicResource FontSizeS}"
+                          Text="{Binding FullPath, Converter={x:Static vc:CommonConverters.FullPathToFileName}}"/>
                       </StackPanel>
                     </HyperlinkButton.Content>
                   </HyperlinkButton>
@@ -91,7 +94,8 @@
               </ItemsControl.ItemTemplate>
             </ItemsControl>
             <TextBlock
-              Classes="Muted" FontSize="12"
+              Classes="Muted"
+              FontSize="{DynamicResource FontSizeS}"
               IsVisible="{Binding HasMoreReferences}"
               Text="{I18N {x:Static LocaleKey.ChatPluginDisplayBlockPresenter_FileReferences_HasMoreReferencesTextBlock_Text}}"/>
           </StackPanel>
@@ -104,7 +108,8 @@
         <DataTemplate DataType="plugins:ChatPluginUrlsDisplayBlock">
           <StackPanel Spacing="4">
             <TextBlock
-              Classes="Muted" FontSize="12">
+              Classes="Muted"
+              FontSize="{DynamicResource FontSizeS}">
               <TextBlock.Text>
                 <I18N Key="{x:Static LocaleKey.ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text}">
                   <Binding Path="Urls.Count"/>
@@ -112,13 +117,41 @@
               </TextBlock.Text>
             </TextBlock>
             <ItemsControl ItemsSource="{Binding Urls}">
+              <ItemsControl.Styles>
+                <Style Selector="Button.Link">
+                  <Setter Property="Background" Value="{DynamicResource BorderColor30}"/>
+                  <Setter Property="shadui:ButtonAssist.HoverBackground" Value="{DynamicResource SelectionColor}"/>
+                  <Setter Property="Padding" Value="6,2"/>
+                  <Setter Property="CornerRadius" Value="{DynamicResource FullCornerRadius}"/>
+                </Style>
+              </ItemsControl.Styles>
+              <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                  <WrapPanel
+                    ItemSpacing="6" LineSpacing="4"/>
+                </ItemsPanelTemplate>
+              </ItemsControl.ItemsPanel>
               <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="plugins:ChatPluginUrl">
-                  <HyperlinkButton
-                    Padding="2"
-                    Content="{Binding DisplayNameKey^}"
-                    NavigateUri="{Binding Url, Converter={x:Static vc:CommonConverters.StringToUri}}"
-                    TextBlock.TextTrimming="CharacterEllipsis"/>
+                  <Button
+                    Classes="Ghost Compact Link"
+                    Command="{Binding $parent[v:ChatPluginDisplayBlockPresenter].OpenUrlCommand}"
+                    CommandParameter="{Binding Url}"
+                    ToolTip.Tip="{Binding DisplayNameKey^}">
+                    <StackPanel Orientation="Horizontal">
+                      <Image
+                        x:Name="FaviconImage" MaxWidth="12"
+                        MaxHeight="12" md:AsyncImageLoader.SizeToContent="Manual"
+                        md:AsyncImageLoader.Source="{Binding Url, Converter={x:Static vc:UrlConverters.ToFaviconUrl}}"/>
+                      <LucideIcon
+                        IsVisible="{Binding #FaviconImage.Bounds.Width, Converter={x:Static vc:DoubleConverters.NotGreaterThan}, ConverterParameter=1}"
+                        Kind="Link" Size="12"/>
+                      <TextBlock
+                        Margin="4,0,0,0"
+                        FontSize="{DynamicResource FontSizeS}"
+                        Text="{Binding Url, Converter={x:Static vc:UrlConverters.ToHost}}"/>
+                    </StackPanel>
+                  </Button>
                 </DataTemplate>
               </ItemsControl.ItemTemplate>
             </ItemsControl>

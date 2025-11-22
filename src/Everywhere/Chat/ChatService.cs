@@ -353,6 +353,7 @@ public class ChatService(
 
             // Build the chat history from the chat context.
             foreach (var chatMessage in chatContext
+                         .AsValueEnumerable()
                          .Select(n => n.Message)
                          .Where(m => !ReferenceEquals(m, assistantChatMessage)) // exclude the current assistant message
                          .Where(m => m.Role.Label is "system" or "assistant" or "user" or "tool")

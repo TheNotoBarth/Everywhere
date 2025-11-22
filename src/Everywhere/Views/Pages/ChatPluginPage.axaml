@@ -135,6 +135,7 @@
         Grid.Row="0" Grid.RowSpan="3"
         Grid.Column="0" Width="128"
         Height="128" Margin="0,0,16,0"
+        md:AsyncImageLoader.SizeToContent="Manual"
         md:AsyncImageLoader.Source="{Binding SelectedPlugin.BeautifulIcon, FallbackValue={x:Null}}"
         IsVisible="{Binding SelectedPlugin.BeautifulIcon, FallbackValue=false, Converter={x:Static ObjectConverters.IsNotNull}}"
         Stretch="Uniform"/>

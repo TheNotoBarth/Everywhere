@@ -1,4 +1,5 @@
-﻿using Avalonia.Data.Converters;
+﻿using System.Globalization;
+using Avalonia.Data.Converters;
 using Avalonia.Media;
 using Everywhere.Common;
 using ZLinq;
@@ -38,7 +39,7 @@ public static class CommonConverters
     {
         private readonly DefaultValueConverter _defaultValueConverter = new();
 
-        public object? Convert(IList<object?> values, Type targetType, object? parameter, System.Globalization.CultureInfo culture)
+        public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
         {
             var value = values.AsValueEnumerable().FirstOrDefault(v => v != AvaloniaProperty.UnsetValue) ?? parameter;
             return value switch
@@ -53,7 +54,7 @@ public static class CommonConverters
 
     private class AllEqualsConverter : IMultiValueConverter
     {
-        public object? Convert(IList<object?> values, Type targetType, object? parameter, System.Globalization.CultureInfo culture)
+        public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
         {
             var first = values.AsValueEnumerable().FirstOrDefault(v => v != AvaloniaProperty.UnsetValue);
             return first != null && values.AsValueEnumerable().Skip(1).All(v => v == first);
@@ -62,7 +63,7 @@ public static class CommonConverters
 
     private class FirstNonNullConverter : IMultiValueConverter
     {
-        public object? Convert(IList<object?> values, Type targetType, object? parameter, System.Globalization.CultureInfo culture)
+        public object? Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
         {
             return values.AsValueEnumerable().OfType<object>().FirstOrDefault(value => value != AvaloniaProperty.UnsetValue);
         }

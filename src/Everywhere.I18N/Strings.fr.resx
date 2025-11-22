@@ -692,12 +692,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>Fournit la capacité d'accéder aux fichiers, tels que l'énumération, la création, la suppression, le renommage, la lecture ou l'écriture.</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>API Système Windows</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>Fournit une surface de contrôle Windows compacte pour les assistants, y compris des raccourcis vers le Panneau de configuration, des mises à jour de paramètres système numériques et booléens, et des actions compatibles avec l'utilisation de la souris et du clavier.</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>Opération invalide.</value>
     </data>
@@ -1270,7 +1264,7 @@ Des espaces réservés peuvent être utilisés dans l'invite, entourés de {}, e
         <value>Modifier le contenu du fichier</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>Recherche : {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>Recherche Web</value>
@@ -1285,10 +1279,7 @@ Des espaces réservés peuvent être utilisés dans l'invite, entourés de {}, e
         <value>Visiter la page Web</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>Visite de {0}</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} Urls</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>Le script terminal suivant sera exécuté</value>
@@ -1541,5 +1532,8 @@ Molette de défilement ou touches numériques pour changer de mode de sélection
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>Annuler la modification (Échap)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>Discussion</value>
     </data>
 </root>

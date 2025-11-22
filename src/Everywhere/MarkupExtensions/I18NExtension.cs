@@ -13,6 +13,10 @@ using ZLinq;
 
 namespace Everywhere.MarkupExtensions;
 
+[DynamicallyAccessedMembers(
+    DynamicallyAccessedMemberTypes.PublicConstructors |
+    DynamicallyAccessedMemberTypes.PublicFields |
+    DynamicallyAccessedMemberTypes.PublicProperties)]
 public class I18NExtension : MarkupExtension
 {
     [AssignBinding]

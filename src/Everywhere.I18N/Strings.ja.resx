@@ -692,12 +692,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>ファイルへのアクセス機能を提供し、列挙、作成、削除、名前変更、読み取り、書き込みなどが可能です。</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>WindowsシステムAPI</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>アシスタント用のコンパクトなWindows制御面を提供し、コントロールパネルのショートカット、数値およびブール値のシステム設定の更新、コンピュータ使用に適したマウスおよびキーボード操作を含みます。</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>無効な操作です。</value>
     </data>
@@ -1270,7 +1264,7 @@
         <value>ファイル内容を編集</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>検索中: {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>ウェブ検索</value>
@@ -1285,10 +1279,7 @@
         <value>ウェブページを訪問</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>{0} を訪問中</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} URL</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>次のターミナルスクリプトが実行されます</value>
@@ -1541,5 +1532,8 @@
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>編集をキャンセル (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>チャット</value>
     </data>
 </root>

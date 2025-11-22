@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Reflection;
 using Avalonia.Data.Converters;
 
@@ -7,6 +8,10 @@ namespace Everywhere.ValueConverters;
 /// <summary>
 /// Resolves a <see cref="DynamicResourceKeyAttribute"/> to the actual resource.
 /// </summary>
+[DynamicallyAccessedMembers(
+    DynamicallyAccessedMemberTypes.PublicConstructors |
+    DynamicallyAccessedMemberTypes.PublicFields |
+    DynamicallyAccessedMemberTypes.PublicProperties)]
 public class DynamicResourceKeyConverter : IValueConverter
 {
     public static DynamicResourceKeyConverter Shared { get; } = new();

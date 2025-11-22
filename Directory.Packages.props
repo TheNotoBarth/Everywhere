@@ -7,7 +7,7 @@
     <OpenTelemetryVersion>1.14.0</OpenTelemetryVersion>
     <SentryVersion>5.16.2</SentryVersion>
     <AvaloniaVersion>11.3.9</AvaloniaVersion>
-    <LiveMarkdownVersion>1.4.0</LiveMarkdownVersion>
+    <LiveMarkdownVersion>1.5.0</LiveMarkdownVersion>
     <SkiaSharpVersion>3.119.1</SkiaSharpVersion>
     <XamlBehaviorsVersion>11.3.8.2</XamlBehaviorsVersion>
   </PropertyGroup>

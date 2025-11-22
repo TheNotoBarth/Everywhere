@@ -68,11 +68,15 @@ public sealed class SettingsItemsSourceGenerator : IIncrementalGenerator
             sb.AppendLine();
         }
 
+        sb.AppendLine("[global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(");
+        sb.AppendLine("    global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties |");
+        sb.AppendLine("    global::System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors");
+        sb.AppendLine(")]");
         sb.Append("partial class ").Append(type.Name).AppendLine();
         sb.AppendLine("{");
         using (sb.Indent())
         {
-            sb.AppendLine("[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]").AppendLine();
+            sb.AppendLine("[global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]");
             sb.AppendLine("[global::System.Text.Json.Serialization.JsonIgnore]");
             sb.AppendLine("public global::Everywhere.Configuration.SettingsItems SettingsItems { get; } = new();").AppendLine();
 

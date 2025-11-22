@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using Everywhere.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
@@ -8,6 +9,7 @@ namespace Everywhere.Database;
 /// <summary>
 /// EF Core DbContext for local chat storage.
 /// </summary>
+[method: DynamicDependency(DynamicallyAccessedMemberTypes.AllConstructors, typeof(DateTimeToTicksConverter))]
 public sealed class ChatDbContext(DbContextOptions<ChatDbContext> options) : DbContext(options)
 {
     public DbSet<ChatContextEntity> Chats => Set<ChatContextEntity>();
@@ -75,9 +77,8 @@ public sealed class ChatDbContext(DbContextOptions<ChatDbContext> options) : DbC
             .HaveConversion<DateTimeOffsetToTicksConverter>();
     }
 
-    private class DateTimeOffsetToTicksConverter() : ValueConverter<DateTimeOffset, long>(
-        v => v.Ticks,
-        v => new DateTimeOffset(v, TimeSpan.Zero));
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.AllConstructors)]
+    private class DateTimeOffsetToTicksConverter() : ValueConverter<DateTimeOffset, long>(v => v.Ticks, v => new DateTimeOffset(v, TimeSpan.Zero));
 }
 
 public class ChatDbInitializer(IDbContextFactory<ChatDbContext> dbFactory) : IAsyncInitializer

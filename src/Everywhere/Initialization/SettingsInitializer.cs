@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.Serialization;
 using Everywhere.Chat.Plugins;
@@ -15,6 +16,10 @@ namespace Everywhere.Initialization;
 /// Initializes the settings with dynamic defined list.
 /// Also initializes an observer that automatically saves the settings when changed.
 /// </summary>
+[DynamicallyAccessedMembers(
+    DynamicallyAccessedMemberTypes.PublicConstructors |
+    DynamicallyAccessedMemberTypes.PublicFields |
+    DynamicallyAccessedMemberTypes.PublicProperties)]
 public class SettingsInitializer : IAsyncInitializer
 {
     public AsyncInitializerPriority Priority => AsyncInitializerPriority.Settings;

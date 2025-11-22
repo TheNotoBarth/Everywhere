@@ -31,6 +31,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TrimmerRootAssembly Include="Everywhere"/>
+    <TrimmerRootAssembly Include="Everywhere.Abstractions"/>
+    <TrimmerRootAssembly Include="Everywhere.I18N"/>
+    <TrimmerRootAssembly Include="Everywhere.Windows"/>
+    <TrimmerRootAssembly Include="WritableJsonConfiguration"/>
+    <TrimmerRootAssembly Include="Anthropic.SDK"/>
+    <TrimmerRootAssembly Include="CSharpMath.Avalonia"/>
+    <TrimmerRootAssembly Include="FlaUI.Core"/>
+    <TrimmerRootAssembly Include="FlaUI.UIA3"/>
+    <TrimmerRootAssembly Include="Google.Apis.Core"/>
+    <TrimmerRootAssembly Include="Google.Apis"/>
+    <TrimmerRootAssembly Include="MessagePack"/>
+    <TrimmerRootAssembly Include="Microsoft.EntityFrameworkCore.Relational"/>
+    <TrimmerRootAssembly Include="Microsoft.EntityFrameworkCore.Sqlite"/>
+    <TrimmerRootAssembly Include="Microsoft.EntityFrameworkCore"/>
+    <TrimmerRootAssembly Include="Microsoft.SemanticKernel.Connectors.Google"/>
+    <TrimmerRootAssembly Include="Microsoft.SemanticKernel.Plugins.Web"/>
+    <TrimmerRootAssembly Include="Microsoft.Windows.SDK.NET"/>
+    <TrimmerRootAssembly Include="Newtonsoft.Json"/>
+    <TrimmerRootAssembly Include="OllamaSharp"/>
+    <TrimmerRootAssembly Include="PuppeteerSharp"/>
+    <TrimmerRootAssembly Include="Serilog"/>
+    <TrimmerRootAssembly Include="SharpGen.Runtime"/>
+    <TrimmerRootAssembly Include="WinRT.Runtime"/>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\3rd\EverythingNetCore\EverythingNet\EverythingNet.csproj"/>
     <ProjectReference Include="..\Everywhere.Windows.PowerShell\Everywhere.Windows.PowerShell.csproj" />
     <ProjectReference Include="..\Everywhere\Everywhere.csproj"/>

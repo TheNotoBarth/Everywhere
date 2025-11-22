@@ -243,4 +243,7 @@ public partial class CustomAssistant : ObservableObject
         LocaleKey.CustomAssistant_FrequencyPenalty_Description)]
     [SettingsDoubleItem(Min = -2.0, Max = 2.0, Step = 0.1)]
     public partial Customizable<double> FrequencyPenalty { get; set; } = 0.0;
+
+    [JsonSerializable(typeof(CustomAssistant))]
+    public partial class JsonSerializerContext : System.Text.Json.Serialization.JsonSerializerContext;
 }

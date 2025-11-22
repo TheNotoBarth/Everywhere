@@ -7,25 +7,24 @@
   <Grid
     ColumnDefinitions="*,8,3*" RowDefinitions="Auto,*"
     RowSpacing="8">
-    <DockPanel
-      Grid.Row="0" Grid.Column="0">
+    <StackPanel
+      Grid.Row="0" Grid.Column="0"
+      Orientation="Horizontal" Spacing="5">
       <Button
-        Classes="Primary" DockPanel.Dock="Left"
-        HorizontalAlignment="Left"
+        Classes="Primary"
         shadui:ButtonAssist.Icon="{LucideIconContent Plus}"
         Command="{Binding CreateNewCustomAssistantCommand}"
         Content="{I18N {x:Static LocaleKey.CustomAssistantPage_CreateNewCustomAssistantButton_Content}}"
         ToolTip.Tip="{I18N {x:Static LocaleKey.CustomAssistantPage_CreateNewCustomAssistantButton_ToolTip}}"/>
 
       <Button
-        Classes="Primary" DockPanel.Dock="Right"
-        HorizontalAlignment="Right"
+        Classes="Secondary"
         shadui:ButtonAssist.Icon="{LucideIconContent Copy}"
         Command="{Binding DuplicateCustomAssistantCommand}"
         Content="{I18N {x:Static LocaleKey.CustomAssistantPage_DuplicateCustomAssistantButton_Content}}"
         IsVisible="{Binding SelectedCustomAssistant, Converter={x:Static ObjectConverters.IsNotNull}}"
         ToolTip.Tip="{I18N {x:Static LocaleKey.CustomAssistantPage_DuplicateCustomAssistantButton_ToolTip}}"/>
-    </DockPanel>
+    </StackPanel>
 
     <ListBox
       Grid.Row="1" Grid.Column="0"
@@ -85,8 +84,8 @@
         <DataTemplate DataType="ai:CustomAssistant">
           <Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" ColumnSpacing="12">
             <v:IconPresenter
-              Grid.Column="0" MinWidth="40"
-              MinHeight="40"
+              Grid.Column="0" Width="40"
+              Height="40"
               CornerRadius="{DynamicResource FullCornerRadius}"
               FontSize="{DynamicResource FontSize2Xl}"
               Icon="{Binding Icon}"

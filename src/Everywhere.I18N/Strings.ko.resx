@@ -692,12 +692,6 @@
     <data name="NativeChatPlugin_FileSystem_Description" xml:space="preserve">
         <value>파일 열람, 생성, 삭제, 이름 변경, 읽기 또는 쓰기 등의 파일 접근 기능을 제공합니다.</value>
     </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Header" xml:space="preserve">
-        <value>Windows 시스템 API</value>
-    </data>
-    <data name="NativeChatPlugin_WindowsSystemApi_Description" xml:space="preserve">
-        <value>어시스턴트를 위한 컴팩트한 Windows 제어 표면을 제공하며, 제어판 바로가기, 숫자 및 불리언 시스템 설정 업데이트, 컴퓨터 사용에 적합한 마우스 및 키보드 동작을 포함합니다.</value>
-    </data>
     <data name="FriendlyExceptionMessage_InvalidOperation" xml:space="preserve">
         <value>잘못된 작업입니다.</value>
     </data>
@@ -1270,7 +1264,7 @@
         <value>파일 내용 편집</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Searching" xml:space="preserve">
-        <value>검색 중: {0}</value>
+        <value>🔎 {0}</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSearch_Header" xml:space="preserve">
         <value>웹 검색</value>
@@ -1285,10 +1279,7 @@
         <value>웹페이지 방문</value>
     </data>
     <data name="NativeChatPlugin_WebBrowser_WebSnapshot_Visiting" xml:space="preserve">
-        <value>{0} 방문 중</value>
-    </data>
-    <data name="ChatPluginDisplayBlockPresenter_Urls_TotalCountTextBlock_Text" xml:space="preserve">
-        <value>{0} URL</value>
+        <value>🧐 {0}</value>
     </data>
     <data name="NativeChatPlugin_PowerShell_ExecuteScript_ScriptConsent_Header" xml:space="preserve">
         <value>다음 터미널 스크립트가 실행됩니다</value>
@@ -1541,5 +1532,8 @@
     </data>
     <data name="ChatWindow_CancelEditingButton_ToolTip" xml:space="preserve">
         <value>수정 취소 (Esc)</value>
+    </data>
+    <data name="ChatWindow_Title" xml:space="preserve">
+        <value>채팅</value>
     </data>
 </root>
