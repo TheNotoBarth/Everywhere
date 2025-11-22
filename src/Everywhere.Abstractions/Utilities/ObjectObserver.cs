@@ -182,9 +182,9 @@ public class ObjectObserver(ObjectObserverChangedEventHandler handler) : IDispos
                 }
                 case NotifyCollectionChangedAction.Move:
                 {
-                    // Items moved, re-observe old and new positions
-                    _owner._handler.Invoke(new ObjectObserverChangedEventArgs(_basePath + e.OldStartingIndex, list[e.OldStartingIndex]));
-                    _owner._handler.Invoke(new ObjectObserverChangedEventArgs(_basePath + e.NewStartingIndex, list[e.NewStartingIndex]));
+                    var start = Math.Min(e.OldStartingIndex, e.NewStartingIndex);
+                    var end = Math.Max(e.OldStartingIndex, e.NewStartingIndex) + 1;
+                    changeRange = new Range(start, end);
                     break;
                 }
                 case NotifyCollectionChangedAction.Reset:

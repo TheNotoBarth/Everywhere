@@ -2,7 +2,8 @@
   x:Class="Everywhere.Views.Pages.CustomAssistantPage" xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ai="clr-namespace:Everywhere.AI"
   xmlns:shadui="clr-namespace:ShadUI.Controls;assembly=ShadUI" xmlns:v="clr-namespace:Everywhere.Views"
-  xmlns:vm="clr-namespace:Everywhere.ViewModels" x:DataType="vm:CustomAssistantPageViewModel">
+  xmlns:vm="clr-namespace:Everywhere.ViewModels" xmlns:behaviors="clr-namespace:Everywhere.Behaviors"
+  x:DataType="vm:CustomAssistantPageViewModel">
   <Grid
     ColumnDefinitions="*,8,3*" RowDefinitions="Auto,*"
     RowSpacing="8">
@@ -31,17 +32,60 @@
       ItemsSource="{Binding CustomAssistants}"
       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
       SelectedItem="{Binding SelectedCustomAssistant, Mode=TwoWay}">
+      <Interaction.Behaviors>
+        <behaviors:ListBoxReorderBehavior />
+      </Interaction.Behaviors>
+
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <StackPanel />
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+
       <ListBox.Styles>
+        <Style Selector="ListBoxItem">
+          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
         <Style Selector="Border">
           <Setter Property="Background" Value="{DynamicResource CardBackgroundColor}"/>
+        </Style>
+        <Style Selector="ListBoxItem Border.DragHandle">
+          <Setter Property="Opacity" Value="0" />
+          <Setter Property="Transitions">
+            <Transitions>
+              <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+            </Transitions>
+          </Setter>
+        </Style>
+        <Style Selector="ListBoxItem:pointerover Border.DragHandle">
+          <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="ListBoxItem.Dragging Border.DragHandle">
+          <Setter Property="Opacity" Value="1" />
+        </Style>
+        <Style Selector="ListBoxItem.Dragging">
+          <Setter Property="Background" Value="{DynamicResource ControlContentBrush}" />
+          <Setter Property="Opacity" Value="0.6" />
+          <Setter Property="Transitions">
+            <Transitions>
+              <DoubleTransition Property="Opacity" Duration="0:0:0.12" />
+            </Transitions>
+          </Setter>
+        </Style>
+        <Style Selector="ListBoxItem.InsertBefore">
+          <Setter Property="BorderBrush" Value="#FF007ACC" />
+          <Setter Property="BorderThickness" Value="0,3,0,0" />
+        </Style>
+        <Style Selector="ListBoxItem.InsertAfter">
+          <Setter Property="BorderBrush" Value="#FF007ACC" />
+          <Setter Property="BorderThickness" Value="0,0,0,3" />
         </Style>
       </ListBox.Styles>
       <ListBox.DataTemplates>
         <DataTemplate DataType="ai:CustomAssistant">
-          <DockPanel
-            HorizontalSpacing="12" LastChildFill="True">
+          <Grid ColumnDefinitions="Auto,*,Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" ColumnSpacing="12">
             <v:IconPresenter
-              DockPanel.Dock="Left" MinWidth="40"
+              Grid.Column="0" MinWidth="40"
               MinHeight="40"
               CornerRadius="{DynamicResource FullCornerRadius}"
               FontSize="{DynamicResource FontSize2Xl}"
@@ -49,7 +93,7 @@
               IconSize="{DynamicResource FontSize2Xl}"
               LineHeight="{DynamicResource LineHeight2Xl}"/>
 
-            <StackPanel VerticalAlignment="Center">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
               <TextBlock
                 Classes="p"
                 Text="{Binding Name, FallbackValue={x:Null}}"
@@ -64,7 +108,20 @@
                 TextTrimming="CharacterEllipsis"
                 ToolTip.Tip="{Binding $self.Text}"/>
             </StackPanel>
-          </DockPanel>
+
+            <Border
+              Grid.Column="2"
+              Classes="DragHandle"
+              VerticalAlignment="Center"
+              Background="Transparent"
+              Cursor="SizeAll"
+              Margin="8,0,0,0">
+              <LucideIcon
+                Size="20"
+                Foreground="LightGray"
+                Kind="GripVertical"/>
+            </Border>
+          </Grid>
         </DataTemplate>
       </ListBox.DataTemplates>
     </ListBox>
