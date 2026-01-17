@@ -239,6 +239,8 @@ public sealed class OpenAIKernelMixin : KernelMixinBase
                     };
                 }
 
+                msg.ReasoningContent = "";
+
                 yield return msg;
             }
         }

@@ -13,3 +13,9 @@
 [submodule "3rd/semantic-kernel"]
 	path = 3rd/semantic-kernel
 	url = https://github.com/microsoft/semantic-kernel
+[submodule "3rd/extensions"]
+	path = 3rd/extensions
+	url = https://github.com/dotnet/extensions
+[submodule "3rd/openai-dotnet"]
+	path = 3rd/openai-dotnet
+	url = https://github.com/openai/openai-dotnet

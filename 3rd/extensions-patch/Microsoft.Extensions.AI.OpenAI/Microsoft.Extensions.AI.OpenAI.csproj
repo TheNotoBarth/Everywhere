@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Microsoft.Extensions.AI.OpenAI</AssemblyName>
+    <RootNamespace>Microsoft.Extensions.AI</RootNamespace>
+    <Description>Implementation of generative AI abstractions for OpenAI-compatible endpoints.</Description>
+    <Workstream>AI</Workstream>
+    <ForceLatestDotnetVersions>true</ForceLatestDotnetVersions>
+    <RepoRoot>..\..\extensions</RepoRoot>
+    <ProjectRoot>$(RepoRoot)\src\Libraries\Microsoft.Extensions.AI.OpenAI</ProjectRoot>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+    <FileVersion>10.0.1.0</FileVersion>
+    <Version>10.0.1-preview.1.25571.5</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\msft-31bf-public.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Stage>preview</Stage>
+    <EnablePackageValidation>false</EnablePackageValidation>
+    <MinCodeCoverage>49</MinCodeCoverage>
+    <MinMutationScore>0</MinMutationScore>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net9.0;net8.0;net462;netstandard2.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CA1063</NoWarn>
+    <NoWarn>$(NoWarn);OPENAI001;OPENAI002;MEAI001;SCME0001</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors></WarningsAsErrors>
+    <DisableNETStandardCompatErrors>true</DisableNETStandardCompatErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <InjectCompilerFeatureRequiredOnLegacy>true</InjectCompilerFeatureRequiredOnLegacy>
+    <InjectExperimentalAttributeOnLegacy>true</InjectExperimentalAttributeOnLegacy>
+    <InjectRequiredMemberOnLegacy>true</InjectRequiredMemberOnLegacy>
+    <InjectStringHashOnLegacy>true</InjectStringHashOnLegacy>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Memory.Data" />
+    <PackageReference Include="System.Text.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Extensions.AI.Abstractions\Microsoft.Extensions.AI.Abstractions.csproj" />
+    <ProjectReference Include="..\..\openai-dotnet-patch\OpenAI\OpenAI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(ProjectRoot)\**\*.cs" Exclude="$(ProjectRoot)\OpenAIChatClient.cs">
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(RepoRoot)\src\Shared\EmptyCollections\**\*.cs">
+      <Link>Shared\EmptyCollections\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(RepoRoot)\src\Shared\Throw\**\*.cs">
+      <Link>Shared\Throw\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>

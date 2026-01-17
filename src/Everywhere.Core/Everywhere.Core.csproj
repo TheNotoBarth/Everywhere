@@ -54,6 +54,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\3rd\MessagePack-CSharp\src\MessagePack.SourceGenerator\MessagePack.SourceGenerator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer"/>
+    <ProjectReference Include="..\..\3rd\openai-dotnet-patch\OpenAI\OpenAI.csproj" />
+    <ProjectReference Include="..\..\3rd\extensions-patch\Microsoft.Extensions.AI.Abstractions\Microsoft.Extensions.AI.Abstractions.csproj" />
+    <ProjectReference Include="..\..\3rd\extensions-patch\Microsoft.Extensions.AI.OpenAI\Microsoft.Extensions.AI.OpenAI.csproj" />
+    <ProjectReference Include="..\..\3rd\extensions-patch\Microsoft.Extensions.AI\Microsoft.Extensions.AI.csproj" />
     <ProjectReference Include="..\..\3rd\semantic-kernel-patch\Connectors.Google\Connectors.Google.csproj" />
     <ProjectReference Include="..\..\3rd\semantic-kernel-patch\Plugins.Web\Plugins.Web.csproj" />
     <ProjectReference Include="..\..\3rd\shad-ui\src\ShadUI\ShadUI.csproj"/>
